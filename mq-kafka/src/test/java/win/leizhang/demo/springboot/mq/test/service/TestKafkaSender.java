@@ -10,8 +10,8 @@ import win.leizhang.demo.springboot.mq.test.BaseTestCase;
  */
 public class TestKafkaSender extends BaseTestCase {
 
-    @Autowired(required = false)
-    KafkaSender sender;
+    @Autowired
+    private KafkaSender sender;
 
     @Test
     public void testSend() {
