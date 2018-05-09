@@ -1,8 +1,7 @@
 package win.leizhang.demo.springboot.mq.service;
 
 import com.alibaba.fastjson.JSON;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -16,11 +15,9 @@ import java.util.UUID;
 /**
  * Created by zealous on 2018/5/9.
  */
-//@Slf4j
+@Slf4j
 @Component
 public class KafkaSender {
-
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Value("${win.leizhang.random.bignumber}")
     private long bigNum;
@@ -39,7 +36,7 @@ public class KafkaSender {
         message.setSendTime(new Date());
 
         String str = JSON.toJSONString(message);
-        log.info("message =" + str);
+        log.info("message ==> {}", str);
 
         // 发送
         String topic = "zhisheng";
