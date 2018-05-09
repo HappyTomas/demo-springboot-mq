@@ -11,8 +11,8 @@ import java.util.Optional;
 /**
  * Created by zealous on 2018/5/9.
  */
-@Component
 //@Slf4j
+@Component
 public class KafkaReceiver {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
