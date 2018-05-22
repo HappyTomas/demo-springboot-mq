@@ -17,7 +17,7 @@
 
     <modules>
         <!-- example -->
-        <!--<module>mq-activemq</module>-->
+        <module>mq-activemq</module>
         <module>mq-kafka</module>
     </modules>
 
