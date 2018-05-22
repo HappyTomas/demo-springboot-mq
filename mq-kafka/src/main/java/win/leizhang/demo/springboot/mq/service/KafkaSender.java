@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
-import win.leizhang.demo.springboot.mq.service.bo.Message;
+import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
 
 import java.util.Date;
 import java.util.UUID;
@@ -30,12 +30,12 @@ public class KafkaSender {
      */
     public void send() {
         // 消息对象
-        Message message = new Message();
-        message.setId(bigNum);
-        message.setMsg(UUID.randomUUID().toString());
-        message.setSendTime(new Date());
+        MessageBO bo = new MessageBO();
+        bo.setId(bigNum);
+        bo.setMsg(UUID.randomUUID().toString());
+        bo.setSendTime(new Date());
 
-        String str = JSON.toJSONString(message);
+        String str = JSON.toJSONString(bo);
         log.info("message ==> {}", str);
 
         // 发送
@@ -43,7 +43,7 @@ public class KafkaSender {
         ListenableFuture future = kafkaTemplate.send(topic, str);
 
         // 处理回调
-        future.addCallback(o -> log.info("send-消息发送成功 ==> {}", message.getMsg()), throwable -> log.error("消息发送失败 ==> {}", message));
+        future.addCallback(o -> log.info("send-消息发送成功 ==> {}", bo.getMsg()), throwable -> log.error("消息发送失败 ==> {}", bo));
     }
 
 }
