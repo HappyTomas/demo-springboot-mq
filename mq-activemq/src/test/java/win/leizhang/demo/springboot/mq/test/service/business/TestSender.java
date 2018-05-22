@@ -50,13 +50,6 @@ public class TestSender extends BaseTestCase {
             //jmsClusterMgr.sendPstQueueMsgOnTransaction(topicName, JSON.toJSONString(bo), msgPropertyMapTest);
         }
 
-        // 测试，睡3秒
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         printData("ok!");
     }
 

@@ -36,9 +36,10 @@ public class JmsRegisterListenerFactory {
 
     public void init() {
         log.info("Start register MQ Listener.............");
-        // demo的
+        // demo的vTopic
         jmsClusterMgr.registClusterQueueListener(LISTENER_DEMO, demoMessageEvent);
-        //jmsClusterMgr.registClusterQueueListener(SENDER_DEMO, demoMessageEvent);
+        // demo的queue
+        jmsClusterMgr.registClusterQueueListener(SENDER_DEMO, demoMessageEvent);
         log.info("Finish register MQ Listener.............");
     }
 

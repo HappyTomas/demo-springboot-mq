@@ -23,7 +23,9 @@ public class MqConstant {
     // 节点
     private final static String NODE = "A.";
 
-    // 测试的Topic
+    /**
+     * 定义的组和vTopic
+     */
     private final static String VTOPIC_DEMO = ACTIVEMQ_VIRTUAL_TOPIC + "demoMessage.";
 
     /**
@@ -39,6 +41,6 @@ public class MqConstant {
     /**
      * listener
      */
-    public final static String LISTENER_DEMO = ACTIVEMQ_V_CONSUMBER + NODE + VTOPIC_DEMO + QUEUE_DEMO_EVENT;
+    public final static String LISTENER_DEMO = ACTIVEMQ_V_CONSUMBER + NODE + SENDER_DEMO;
 
 }
