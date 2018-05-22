@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.crt.jms.mq.JmsClusterMgr;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.annotation.Rollback;
 import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
 import win.leizhang.demo.springboot.mq.test.BaseTestCase;
@@ -23,11 +22,6 @@ public class TestSender extends BaseTestCase {
     @Autowired
     JmsClusterMgr jmsClusterMgr;
 
-    @Value("${win.leizhang.random.value}")
-    private String value;
-    @Value("${win.leizhang.random.bignumber}")
-    private long bigNum;
-
     private static final Map<String, Object> msgPropertyMapTest = new HashMap<>();
 
     static {
@@ -45,6 +39,7 @@ public class TestSender extends BaseTestCase {
         bo.setMsg("message123");
         bo.setSendTime(new Date());
 
+        // name
         String topicName = SENDER_DEMO;
         printData(topicName);
 
@@ -55,6 +50,7 @@ public class TestSender extends BaseTestCase {
             //jmsClusterMgr.sendPstQueueMsgOnTransaction(topicName, JSON.toJSONString(bo), msgPropertyMapTest);
         }
 
+        // 测试，睡3秒
         try {
             Thread.sleep(3000);
         } catch (Exception e) {
