@@ -69,6 +69,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
+                        <exclude>application.properties</exclude>
                         <exclude>mybatis/generatorConfigAutoMapper.xml</exclude>
                     </excludes>
                 </configuration>
