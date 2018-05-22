@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import win.leizhang.demo.springboot.mq.service.business.DemoMessageEvent;
 
 import static win.leizhang.demo.springboot.mq.utils.MqConstant.LISTENER_DEMO;
+import static win.leizhang.demo.springboot.mq.utils.MqConstant.SENDER_DEMO;
 
 /**
  * 所有的MQ消费者在这里注册
@@ -37,6 +38,7 @@ public class JmsRegisterListenerFactory {
         log.info("Start register MQ Listener.............");
         // demo的
         jmsClusterMgr.registClusterQueueListener(LISTENER_DEMO, demoMessageEvent);
+        //jmsClusterMgr.registClusterQueueListener(SENDER_DEMO, demoMessageEvent);
         log.info("Finish register MQ Listener.............");
     }
 

@@ -1,12 +1,15 @@
 package win.leizhang.demo.springboot.mq.service.business;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import com.crt.jms.mq.JmsClusterMgr;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -47,6 +50,7 @@ public class DemoMessageEvent implements MessageListener {
             log.error("发生异常，没有处理的Message写入临时表，请查看[mq_receiver]日志");
             // 异常分类
             if (e instanceof NullPointerException) {
+                log.info("null exception!!!");
                 //log.info("[BusinessException] 详情==> {}, {}", ((BusinessServiceException) e).getCode(), e.getMessage());
             } else if (e instanceof JSONException) {
                 log.error("[JsonException] 详情==> json转换错误");
@@ -72,11 +76,10 @@ public class DemoMessageEvent implements MessageListener {
     }
 
     private void execute(String text) {
-        //GrowthAccountBO bo = JSONObject.parseObject(text, GrowthAccountBO.class);
-        //Long memberId = bo.getMemberId();
-        //Integer levelId = bo.getMemberLevel();
+        MessageBO bo = JSONObject.parseObject(text, MessageBO.class);
 
         // 业务处理和调用
+        log.info("execute logic, the obj ==> {}", JSON.toJSONString(bo));
 
         log.debug("execute finish!");
     }

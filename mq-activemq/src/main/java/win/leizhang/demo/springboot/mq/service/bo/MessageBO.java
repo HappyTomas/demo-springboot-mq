@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by zealous on 2018/5/9.
  */
 @Data
-public class Message {
+public class MessageBO {
 
     //id
     private Long id;

@@ -8,13 +8,13 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringRunner;
 import win.leizhang.demo.springboot.mq.Application;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class})
-public class BaseTestCase extends AbstractJUnit4SpringContextTests {
+public class BaseTestCase extends AbstractTransactionalJUnit4SpringContextTests {
 
     public final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -22,8 +22,8 @@ public class BaseTestCase extends AbstractJUnit4SpringContextTests {
     private long endTime;
 
     static {
-        System.setProperty("crtCurrentApplicationName", "demo-mq-kafka-testCase");
-        System.setProperty("server.port", "5012");
+        System.setProperty("crtCurrentApplicationName", "demo-mq-activemq-testCase");
+        System.setProperty("server.port", "5022");
     }
 
     @Before
