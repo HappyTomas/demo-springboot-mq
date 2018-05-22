@@ -21,8 +21,41 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <!-- db-pool -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!--mybatis-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${springboot.mapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${springboot.pagehelper.version}</version>
+        </dependency>
+
         <!-- mq -->
-        
+        <dependency>
+            <groupId>com.crt.mq</groupId>
+            <artifactId>mq-common</artifactId>
+            <version>1.1.12</version>
+        </dependency>
+
         <!-- other -->
 
     </dependencies>
