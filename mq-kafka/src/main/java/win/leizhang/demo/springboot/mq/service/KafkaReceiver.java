@@ -15,7 +15,7 @@ import java.util.Optional;
 @Component
 public class KafkaReceiver {
 
-    @KafkaListener(topics = {"zhisheng"})
+    @KafkaListener(topics = {"zhang"})
     private void listen(ConsumerRecord<?, ?> record) {
         log.info("----------------- record ==> {}", record);
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
