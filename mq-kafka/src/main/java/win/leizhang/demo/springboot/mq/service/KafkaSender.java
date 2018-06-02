@@ -39,7 +39,7 @@ public class KafkaSender {
         log.info("message ==> {}", str);
 
         // 发送
-        String topic = "zhang";
+        String topic = "zhang3";
         ListenableFuture future = kafkaTemplate.send(topic, str);
 
         // 处理回调

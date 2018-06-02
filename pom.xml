@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.12.RELEASE</version>
+        <version>1.5.13.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -30,7 +30,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- spring -->
-        <springboot.version>1.5.12.RELEASE</springboot.version>
+        <springboot.version>1.5.13.RELEASE</springboot.version>
 
         <!-- common -->
         <commons-lang3.version>3.6</commons-lang3.version>
