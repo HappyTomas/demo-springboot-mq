@@ -17,23 +17,25 @@ public class KafkaReceiver {
 
     @KafkaListener(topics = {"zhang3"})
     private void listen(ConsumerRecord<?, ?> record) {
-        log.info("----------------- record ==> {}", record);
+        //log.debug("----------------- record ==> {}", record);
+        log.info("----------------- record ==> detail: topic={}, partition={}, offset={}, timestamp={}, value={}", record.topic(), record.partition(), record.offset(), record.timestamp(), record.value());
+
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
-
-        if (kafkaMessage.isPresent()) {
-            // 原对象
-            Object obj = kafkaMessage.get();
-            // 转字符串
-            String str = String.valueOf(obj);
-
-            // 报文为空，返回
-            if (StringUtils.isBlank(str)) {
-                log.info("message is null, just return!");
+        if (!kafkaMessage.isPresent()) {
+            log.error("其他为null的场景！");
+        } else {
+            String str = String.valueOf(kafkaMessage.get());
+            if (StringUtils.isBlank(str) || StringUtils.equals(str, "null") || StringUtils.equals(str, "{}")) {
+                // 报文为空，返回
+                log.warn("message is null, just return!");
                 return;
+            } else {
+                // 业务处理和调用
+                log.info("execute logic, the str ==> {}", str);
+                log.debug("execute finish!");
             }
-
-            log.info("----------------- string ==> {}", str);
         }
 
     }
+
 }
