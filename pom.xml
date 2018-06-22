@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.13.RELEASE</version>
+        <version>1.5.14.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -30,12 +30,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- spring -->
-        <springboot.version>1.5.13.RELEASE</springboot.version>
+        <springboot.version>1.5.14.RELEASE</springboot.version>
 
         <!-- common -->
-        <commons-lang3.version>3.6</commons-lang3.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
         <commons-collections4.version>4.1</commons-collections4.version>
-        <fastjson.version>1.2.44</fastjson.version>
+        <fastjson.version>1.2.47</fastjson.version>
 
         <!-- db-pool -->
         <druid.version>1.1.6</druid.version>
@@ -140,6 +140,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- fixme -->
+                <version>1.5.13.RELEASE</version>
                 <configuration>
                     <fork>true</fork>
                 </configuration>
