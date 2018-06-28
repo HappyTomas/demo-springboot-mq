@@ -16,28 +16,51 @@ import java.util.Optional;
 @Component
 public class KafkaReceiver {
 
+    private final static String STR_NULL = "null";
+    private final static String STR_BRACE = "{}";
+
     @KafkaListener(topics = {"zhang3"})
     private void receive(ConsumerRecord<?, ?> record, Acknowledgment ack) {
-        //log.debug("----------------- record ==> {}", record);
-        log.info("----------------- record ==> detail: topic={}, partition={}, offset={}, timestamp={}, value={}", record.topic(), record.partition(), record.offset(), record.timestamp(), record.value());
+        log.debug("----------------- record ==> {}", record);
+        // 手工确认，返回
+        ack.acknowledge();
+        log.debug("----------------- record ==> detail: topic={}, partition={}, offset={}, timestamp={}, value={}", record.topic(), record.partition(), record.offset(), record.timestamp(), record.value());
 
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (!kafkaMessage.isPresent()) {
             log.error("其他为null的场景！");
         } else {
             String str = String.valueOf(kafkaMessage.get());
-            if (StringUtils.isBlank(str) || StringUtils.equals(str, "null") || StringUtils.equals(str, "{}")) {
+            if (StringUtils.isBlank(str) || StringUtils.equals(str, STR_NULL) || StringUtils.equals(str, STR_BRACE)) {
                 log.warn("message is null, just return!");
             } else {
-                // 业务处理和调用
-                log.info("execute logic, the str ==> {}", str);
-                log.debug("execute finish!");
+                // 分类处理
+                handleByTopic(record.topic(), str);
             }
         }
 
-        // 手工确认，返回
-        ack.acknowledge();
-        return;
+        // 返回
+    }
+
+
+    /**
+     * 按topic分类处理
+     *
+     * @param topic   主题
+     * @param message 消息
+     */
+    private void handleByTopic(String topic, String message) {
+        log.info("topic ==> {}, message ==> {}", topic, message);
+
+        // 分类
+        if (StringUtils.equals(topic, "zhang3")) {
+            // TODO logic
+            log.info("logic={}, message={}", topic, message);
+        } else {
+            // 其他逻辑
+            log.warn("未匹配到处理逻辑，仍然做签收处理！");
+        }
+        log.debug("execute finish!");
     }
 
 }
