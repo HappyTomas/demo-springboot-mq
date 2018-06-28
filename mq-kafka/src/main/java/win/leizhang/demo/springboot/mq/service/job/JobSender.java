@@ -38,10 +38,8 @@ public class JobSender {
         bo.setMsg(UUID.randomUUID().toString());
         bo.setSendTime(new Date());
 
-        String str = JSON.toJSONString(bo);
-        log.info("jobSenderMsg ==> {}", str);
-
-        sender.send(DEFAULT_TOPIC, str);
+        log.info("jobSenderMsg ==> {}", JSON.toJSONString(bo));
+        sender.send(DEFAULT_TOPIC, bo);
     }
 
     @Scheduled(cron = "1/7 * * * * ?")
@@ -53,9 +51,7 @@ public class JobSender {
         bo.setMsg(UUID.randomUUID().toString());
         bo.setSendTime(new Date());
 
-        String str = JSON.toJSONString(bo);
-        log.info("jobSenderMsg2 ==> {}", str);
-
-        sender.send(DEFAULT_TOPIC, str);
+        log.info("jobSenderMsg2 ==> {}", JSON.toJSONString(bo));
+        sender.send(DEFAULT_TOPIC, bo);
     }
 }

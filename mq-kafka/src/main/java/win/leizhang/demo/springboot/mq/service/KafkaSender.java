@@ -1,5 +1,6 @@
 package win.leizhang.demo.springboot.mq.service;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,9 @@ public class KafkaSender {
     /**
      * 发送消息方法
      */
-    public void send(String topic, String str) {
+    public void send(String topic, Object obj) {
 
+        String str = JSON.toJSONString(obj);
         // 发送
         ListenableFuture future = kafkaTemplate.send(topic, str);
 
