@@ -16,10 +16,12 @@ import java.util.Optional;
 @Component
 public class KafkaReceiver {
 
+    private static final String DEFAULT_TOPIC = "zhang3";
+
     private final static String STR_NULL = "null";
     private final static String STR_BRACE = "{}";
 
-    @KafkaListener(topics = {"zhang3"})
+    @KafkaListener(topics = {DEFAULT_TOPIC})
     private void receive(ConsumerRecord<?, ?> record, Acknowledgment ack) {
         log.debug("----------------- record ==> {}", record);
         // 手工确认，返回
@@ -53,7 +55,7 @@ public class KafkaReceiver {
         log.info("topic ==> {}, message ==> {}", topic, message);
 
         // 分类
-        if (StringUtils.equals(topic, "zhang3")) {
+        if (StringUtils.equals(topic, DEFAULT_TOPIC)) {
             // TODO logic
             log.info("logic={}, message={}", topic, message);
         } else {
