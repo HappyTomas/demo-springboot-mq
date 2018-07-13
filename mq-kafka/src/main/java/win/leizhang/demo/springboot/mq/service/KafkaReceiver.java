@@ -23,7 +23,7 @@ public class KafkaReceiver {
 
     @KafkaListener(topics = {DEFAULT_TOPIC})
     private void receive(ConsumerRecord<?, ?> record, Acknowledgment ack) {
-        log.debug("----------------- record ==> {}", record);
+        //log.debug("----------------- record ==> {}", record);
         // 手工确认，返回
         ack.acknowledge();
         log.debug("----------------- record ==> detail: topic={}, partition={}, offset={}, timestamp={}, value={}", record.topic(), record.partition(), record.offset(), record.timestamp(), record.value());
@@ -53,11 +53,10 @@ public class KafkaReceiver {
      */
     private void handleByTopic(String topic, String message) {
         log.info("topic ==> {}, message ==> {}", topic, message);
-
         // 分类
         if (StringUtils.equals(topic, DEFAULT_TOPIC)) {
             // TODO logic
-            log.info("logic={}, message={}", topic, message);
+            log.debug("logic start, topic={}, message={}", topic, message);
         } else {
             // 其他逻辑
             log.warn("未匹配到处理逻辑，仍然做签收处理！");
