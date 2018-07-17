@@ -14,7 +14,7 @@ public class TestStringProducer {
 
         for (int i = 0; i < 10; i++) {
             String data = "hellow world " + i;
-            producer.send("str-test", data);
+            producer.send("zhang3", data);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -27,7 +27,7 @@ public class TestStringProducer {
             System.out.println("begin");
             for (int i = 0; i > -1; i++) {
                 long createTime = System.currentTimeMillis();
-                producer.send("cep", trace + "" + createTime + "}]");
+                producer.send("zhang3", trace + "" + createTime + "}]");
                 System.out.println(i);
             }
             System.out.println("end");
@@ -53,7 +53,7 @@ public class TestStringProducer {
         StringProducer producer = StringProducer.getStringProducer();
 
         StringBuffer msg = new StringBuffer();
-        for (int i = 0; i < 999941; i++) {
+        for (int i = 0; i < 998899; i++) {
             msg.append("a");
 
 /*
