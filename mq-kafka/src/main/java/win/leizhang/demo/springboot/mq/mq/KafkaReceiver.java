@@ -52,7 +52,7 @@ public class KafkaReceiver {
      * @param message 消息
      */
     private void handleByTopic(String topic, String message) {
-        log.info("topic ==> {}, message ==> {}", topic, message);
+        log.debug("topic ==> {}, message ==> {}", topic, message);
         // 分类
         if (StringUtils.equals(topic, DEFAULT_TOPIC)) {
             // TODO logic

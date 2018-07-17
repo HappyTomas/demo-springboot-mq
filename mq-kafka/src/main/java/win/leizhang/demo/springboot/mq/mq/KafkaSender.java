@@ -18,11 +18,16 @@ public class KafkaSender {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     /**
-     * 发送消息方法
+     * 发mq
+     *
+     * @param topic 主题
+     * @param obj   对象
      */
     public void send(String topic, Object obj) {
         String str = JSON.toJSONString(obj);
-        // 发送
+
+        // 业务代码
+        log.debug("准备发mq, topic ==> {}, message ==> {}", topic, str);
         ListenableFuture future = kafkaTemplate.send(topic, str);
 
 /*
