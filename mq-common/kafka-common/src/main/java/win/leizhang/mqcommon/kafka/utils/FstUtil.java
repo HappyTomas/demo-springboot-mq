@@ -13,14 +13,13 @@ public class FstUtil {
         return fstConfiguration.asByteArray(obj);
     }
 
-    public static <T> T deserialize(byte[] bytes, Class<T> clazz) {
-        Object obj = fstConfiguration.asObject(bytes);
-        return (T) obj;
-    }
-
     public static Object deserializa(byte[] bytes) {
         return fstConfiguration.asObject(bytes);
     }
 
+    public static <T> T deserialize(byte[] bytes, Class<T> clazz) {
+        Object obj = deserializa(bytes);
+        return (T) obj;
+    }
 
 }

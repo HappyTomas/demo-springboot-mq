@@ -22,19 +22,18 @@ public class StringProducer {
 
     private static Logger log = LoggerFactory.getLogger(StringProducer.class);
 
-    private BlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<Runnable>(10000);
+    private BlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<>(10000);
 
     private ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 1000 * 60, TimeUnit.MILLISECONDS, blockingQueue);
 
-    private static KafkaProducer producer;
+    private static KafkaProducer<String, String> producer;
 
     private StringProducer() {
         String kafka = System.getProperty("kafka.trace.bootstrap.servers");
         try {
             if (null == kafka || kafka.length() <= 0) {
                 Properties properties = new Properties();
-                properties.load(Thread.currentThread().getContextClassLoader()
-                        .getResourceAsStream("application.properties"));
+                properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
                 kafka = properties.get("kafka.trace.bootstrap.servers").toString();
             }
         } catch (Exception e) {
@@ -48,7 +47,7 @@ public class StringProducer {
     public static void init() {
         try {
             Properties prop = PropertiesUtil.getStrSerializerProducerConf();
-            producer = new KafkaProducer(prop);
+            producer = new KafkaProducer<>(prop);
         } catch (Exception e) {
             log.error("init kafkaProducer error:", e.getMessage());
         }
@@ -61,7 +60,7 @@ public class StringProducer {
             public void run() {
                 //发送trace span信息到kafka
                 String cepJsonSpan = JsonMapper.toJson(cepObj);
-                ProducerRecord<String, String> record = new ProducerRecord(topic, cepJsonSpan);
+                ProducerRecord<String, String> record = new ProducerRecord<>(topic, cepJsonSpan);
                 producer.send(record);
                 log.debug("\ncepJsonSpan:\n" + cepJsonSpan);
             }
@@ -70,14 +69,14 @@ public class StringProducer {
     }
 
     public void send(String topic, String data) {
-        ProducerRecord<String, String> record = new ProducerRecord(topic, data);
+        ProducerRecord<String, String> record = new ProducerRecord<>(topic, data);
         producer.send(record);
     }
 
     public void send(String topic, String data, String key) {
         //Integer partition = key.hashCode() % 6;
         //ProducerRecord record = new ProducerRecord(topic, partition, null ,data);
-        ProducerRecord record = new ProducerRecord(topic, key, data);
+        ProducerRecord record = new ProducerRecord<>(topic, key, data);
         producer.send(record);
     }
 
@@ -86,10 +85,10 @@ public class StringProducer {
             @Override
             public void run() {
                 //发送trace span信息到kafka
-                List<Object> spanList = new ArrayList();
+                List<Object> spanList = new ArrayList<>();
                 spanList.add(obj);
                 String jsonSpan = JsonMapper.toJson(spanList);
-                ProducerRecord record = new ProducerRecord("zipkin", key, jsonSpan);
+                ProducerRecord record = new ProducerRecord<>("zipkin", key, jsonSpan);
                 producer.send(record);
                 log.debug("\njsonSpan:\n" + jsonSpan);
             }

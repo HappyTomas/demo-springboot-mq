@@ -38,8 +38,6 @@ public class StringConsumer {
         INIT, RUNNING, STOPPING, STOPPED;
     }
 
-    ;
-
     private volatile Status status = Status.INIT;
 
     private StringConsumer() {
@@ -49,7 +47,7 @@ public class StringConsumer {
     private void init() {
         Properties props = PropertiesUtil.getStrSerializerConsumerConf();
         streamThreadPool = Executors.newFixedThreadPool(1);
-        consumer = new KafkaConsumer(props);
+        consumer = new KafkaConsumer<>(props);
     }
 
     private static class ConsumerHolder {
@@ -100,7 +98,6 @@ public class StringConsumer {
         }
 
     }
-
 
     /**
      * 消息任务

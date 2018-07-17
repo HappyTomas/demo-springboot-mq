@@ -17,7 +17,6 @@ public class FstDeserializer implements Deserializer<Event> {
 
     @Override
     public void configure(Map<String, ?> map, boolean b) {
-
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 public class EventProducer {
 
-    private KafkaProducer producer;
+    private KafkaProducer<String, Event> producer;
 
     private EventProducer() {
         init();
@@ -19,7 +19,7 @@ public class EventProducer {
 
     private void init() {
         Properties props = PropertiesUtil.getProducerConfig();
-        producer = new KafkaProducer(props);
+        producer = new KafkaProducer<>(props);
     }
 
     public void send(Event event) {

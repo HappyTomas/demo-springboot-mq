@@ -47,7 +47,7 @@ public class EventConsumer {
     private void init() {
         Properties props = PropertiesUtil.getConsumerConfig();
         streamThreadPool = Executors.newFixedThreadPool(1);
-        consumer = new KafkaConsumer(props);
+        consumer = new KafkaConsumer<>(props);
     }
 
     private static class ConsumerHolder {

@@ -16,7 +16,6 @@ public class FstSerializer implements Serializer<Object> {
 
     @Override
     public void configure(Map<String, ?> map, boolean b) {
-
     }
 
     @Override
@@ -31,7 +30,6 @@ public class FstSerializer implements Serializer<Object> {
 
     @Override
     public void close() {
-
     }
 
 }
