@@ -55,22 +55,33 @@ public class TestStringProducer {
         StringBuffer msg = new StringBuffer();
         for (int i = 0; i < 999941; i++) {
             msg.append("a");
-            //——————————————————发送消息前埋点————————————————————
+
 /*
-            //1，发送消息前调用cs方法埋点并返回clientTraceToken，第一个参数为应用名称，第二个参数为topic名称
-            String clientTraceToken = MqTraceTrack.cs("crm", "akka");
-            producer.send("akka", "message" + clientTraceToken);
-            //2，发送消息完毕调用cr方法，传入cs方法返回跌clientTraceToken
+            //生产端
+            // cts mqProvider start
+            String clientTraceToken = MqTraceTrack.cs(MemberApplication.APPLICATION_NAME, topic);
+            StringBuilder sb = new StringBuilder();
+            sb.append(clientTraceToken).append(CTS_SPLIT_CLIENT).append(str);
+            str = sb.toString();
+
+            // 业务代码1
+
+            // cts mqProvider end
             MqTraceTrack.cr(clientTraceToken);
 
-            //————————————————————接收消息后埋点————————————————————
-            //3，接收到topic的消息后，从消息头部取出clientTraceToken，调用sr方法埋点，第一个参数为mq头部的clientTraceToken，第二个参数为当前应用名称，第3个参数为topic名称
-            String serverTraceToken = MqTraceTrack.sr("clientTraceToken", "crm-consumer", "akka");
-            //业务代码执行
 
-            //4，发送消息完毕调用ss方法，传入sr方法返回跌serverTraceToken
+            //消费端
+            // cts mqConsumer start
+            String[] strs = str.split(CTS_SPLIT_CLIENT);
+            String serverTraceToken = MqTraceTrack.sr(strs[0], MemberApplication.APPLICATION_NAME, record.topic());
+            str = strs[1];
+
+            // 业务代码2
+
+            // cts mqConsumer end
             MqTraceTrack.ss(serverTraceToken);
 */
+
         }
 
         String json = "[{\"annotations\":[{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"timestamp\":\"1528964967870000\",\"value\":\"cs\"},{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"timestamp\":\"1528964967892000\",\"value\":\"cr\"}],\"binaryAnnotations\":[{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"key\":\"clientAppName\",\"value\":\"hrtds.php\"}],\"debug\":false,\"duration\":22000,\"id\":\"6a386087ed0544d89919daec9f798ddd\",\"name\":\"queryProfile\",\"parentId\":\"6a386087ed0544d89919daec9f798ffe\",\"timestamp\":\"1528964967870000\",\"traceId\":\"05d1c48b79474e8dab62dad617d9f159\"}]";
