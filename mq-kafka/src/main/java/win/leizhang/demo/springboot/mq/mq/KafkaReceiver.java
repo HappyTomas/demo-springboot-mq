@@ -1,4 +1,4 @@
-package win.leizhang.demo.springboot.mq.service;
+package win.leizhang.demo.springboot.mq.mq;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

@@ -1,4 +1,4 @@
-package win.leizhang.demo.springboot.mq.service;
+package win.leizhang.demo.springboot.mq.mq;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
