@@ -5,7 +5,6 @@
 
     <groupId>win.leizhang.demo.springboot.mq</groupId>
     <artifactId>kafka-common</artifactId>
-    <packaging>jar</packaging>
     <version>1.0.0</version>
 
     <properties>
@@ -37,17 +36,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.10.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- test -->
