@@ -3,21 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-        <parent>
-          <groupId>win.leizhang.demo.springboot.mq</groupId>
-          <artifactId>demo-springboot-mq-parent</artifactId>
-            <version>1.0</version>
-        </parent>
+    <parent>
+        <groupId>win.leizhang.demo.springboot.mq</groupId>
+        <artifactId>demo-springboot-mq-parent</artifactId>
+        <version>1.0</version>
+    </parent>
 
-        <artifactId>mq-common</artifactId>
-        <packaging>pom</packaging>
+    <artifactId>mq-common</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>activemq-common</module>
         <module>kafka-common</module>
     </modules>
-
-        <dependencies>
-        </dependencies>
 
 </project>
