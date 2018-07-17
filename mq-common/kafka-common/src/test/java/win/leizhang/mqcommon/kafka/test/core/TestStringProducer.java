@@ -59,7 +59,7 @@ public class TestStringProducer {
 
         }
         String json = "[{\"annotations\":[{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"timestamp\":\"1528964967870000\",\"value\":\"cs\"},{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"timestamp\":\"1528964967892000\",\"value\":\"cr\"}],\"binaryAnnotations\":[{\"endpoint\":{\"ipv4\":\"10.0.55.116\",\"port\":80,\"serviceName\":\"api.hfive.homepage.index\"},\"key\":\"clientAppName\",\"value\":\"hrtds.php\"}],\"debug\":false,\"duration\":22000,\"id\":\"6a386087ed0544d89919daec9f798ddd\",\"name\":\"queryProfile\",\"parentId\":\"6a386087ed0544d89919daec9f798ffe\",\"timestamp\":\"1528964967870000\",\"traceId\":\"05d1c48b79474e8dab62dad617d9f159\"}]";
-        producer.send("zipkin", json);
+        producer.send("zhang3", json);
 
         // 异常处理
         try {

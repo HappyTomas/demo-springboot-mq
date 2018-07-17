@@ -14,7 +14,7 @@ public class TestStringConsumer {
     @Test
     public void test1() {
         StringConsumer consumer = StringConsumer.getDefaultStringConsumer();
-        consumer.subscribe(Arrays.asList("zipkin"), new StringHandler());
+        consumer.subscribe(Arrays.asList("zhang3"), new StringHandler());
 
         // 异常处理
         try {

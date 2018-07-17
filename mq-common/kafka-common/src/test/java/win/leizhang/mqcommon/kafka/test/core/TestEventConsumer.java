@@ -14,7 +14,7 @@ public class TestEventConsumer {
     @Test
     public void test1() {
         EventConsumer consumer = EventConsumer.getDefaultEventConsumer();
-        consumer.subscribe(Arrays.asList("test"), new OrderHandler());
+        consumer.subscribe(Arrays.asList("zhang3"), new OrderHandler());
 
         // 异常处理
         try {

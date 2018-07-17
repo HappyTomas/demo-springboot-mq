@@ -13,14 +13,13 @@ public class TestEventProducer {
 
     @Test
     public void test1() {
-
         EventProducer producer = EventProducer.getDefaultEventProducer();
         for (int i = 0; i < 10; i++) {
             Order orderInfo = new Order();
             orderInfo.setOrderNo("orderNo" + i);
             orderInfo.setGoodNo("goodNo" + i);
             orderInfo.setGoodName("goodName" + i);
-            Event event = new Event("test", orderInfo);
+            Event event = new Event("zhang3", orderInfo);
             event.putProperty("createTime", String.valueOf(System.currentTimeMillis()));
             producer.send(event);
             try {
