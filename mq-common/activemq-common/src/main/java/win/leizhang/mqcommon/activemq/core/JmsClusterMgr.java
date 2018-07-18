@@ -28,6 +28,10 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Map.Entry;
 
+import static win.leizhang.mqcommon.activemq.utils.CommonConstant.DEFAULT_FORMATTER_LDT;
+
+import org.springframework.jms.IllegalStateException;
+
 
 public class JmsClusterMgr {
     private static Logger logger = LoggerFactory.getLogger(JmsClusterMgr.class.getName());
@@ -114,7 +118,7 @@ public class JmsClusterMgr {
         String msgId = uuid.substring(0, 8) + random.nextInt(10) + uuid.substring(9, 13) + random.nextInt(10)
                 + uuid.substring(14, 18) + random.nextInt(10) + uuid.substring(19, 23) + random.nextInt(10)
                 + uuid.substring(24);
-        String msgTime = LocalDateTime.now().toString();
+        String msgTime = LocalDateTime.now().format(DEFAULT_FORMATTER_LDT);
         msgPropertyMap.put("msgId", msgId);
         msgPropertyMap.put("msgTime", msgTime);
         writeMqSenderToDB(destName, msg.toString(), msgPropertyMap);
@@ -556,7 +560,7 @@ public class JmsClusterMgr {
         try {
             String msgTime = objMsg.getStringProperty("msgTime");
             if (msgTime == null) {
-                msgTime = LocalDateTime.now().toString();
+                msgTime = LocalDateTime.now().format(DEFAULT_FORMATTER_LDT);
             }
             String msgId = objMsg.getStringProperty("msgId");
             if (msgId == null) {
