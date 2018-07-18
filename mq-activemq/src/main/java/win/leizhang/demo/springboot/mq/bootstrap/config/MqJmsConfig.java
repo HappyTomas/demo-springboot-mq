@@ -4,8 +4,6 @@
 package win.leizhang.demo.springboot.mq.bootstrap.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.crt.jms.mq.JmsCluster;
-import com.crt.jms.mq.JmsClusterMgr;
 import org.apache.activemq.ActiveMQPrefetchPolicy;
 import org.apache.activemq.RedeliveryPolicy;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import win.leizhang.demo.springboot.mq.service.JmsRegisterListenerFactory;
+import win.leizhang.mqcommon.activemq.core.JmsCluster;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import javax.sql.DataSource;
 import java.util.concurrent.RejectedExecutionHandler;

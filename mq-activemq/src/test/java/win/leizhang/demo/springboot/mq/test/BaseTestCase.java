@@ -22,7 +22,7 @@ public class BaseTestCase extends AbstractTransactionalJUnit4SpringContextTests 
     private long endTime;
 
     static {
-        System.setProperty("crtCurrentApplicationName", "demo-mq-activemq-testCase");
+        System.setProperty("crtCurrentAppName", "demo-mq-activemq-testCase");
         System.setProperty("server.port", "5022");
     }
 

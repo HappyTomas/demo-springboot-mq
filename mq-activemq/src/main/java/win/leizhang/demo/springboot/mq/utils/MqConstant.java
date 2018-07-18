@@ -1,6 +1,6 @@
 package win.leizhang.demo.springboot.mq.utils;
 
-import com.crt.jms.mq.JmsClusterMgr;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import java.util.HashMap;
 import java.util.Map;

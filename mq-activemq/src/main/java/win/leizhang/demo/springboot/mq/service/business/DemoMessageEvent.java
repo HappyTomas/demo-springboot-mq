@@ -3,13 +3,13 @@ package win.leizhang.demo.springboot.mq.service.business;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.crt.jms.mq.JmsClusterMgr;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -22,7 +22,7 @@ public class DemoMessageEvent implements MessageListener {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    JmsClusterMgr jmsClusterMgr;
+    private JmsClusterMgr jmsClusterMgr;
 
     @Override
     public void onMessage(Message message) {

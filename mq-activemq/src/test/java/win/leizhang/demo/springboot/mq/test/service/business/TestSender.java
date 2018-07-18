@@ -1,12 +1,12 @@
 package win.leizhang.demo.springboot.mq.test.service.business;
 
 import com.alibaba.fastjson.JSON;
-import com.crt.jms.mq.JmsClusterMgr;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
 import win.leizhang.demo.springboot.mq.test.BaseTestCase;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ import static win.leizhang.demo.springboot.mq.utils.MqConstant.SENDER_DEMO;
 public class TestSender extends BaseTestCase {
 
     @Autowired
-    JmsClusterMgr jmsClusterMgr;
+    private JmsClusterMgr jmsClusterMgr;
 
     private static final Map<String, Object> msgPropertyMapTest = new HashMap<>();
 

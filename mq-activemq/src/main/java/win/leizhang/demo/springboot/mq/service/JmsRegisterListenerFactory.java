@@ -1,10 +1,10 @@
 package win.leizhang.demo.springboot.mq.service;
 
-import com.crt.jms.mq.JmsClusterMgr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import win.leizhang.demo.springboot.mq.service.business.DemoMessageEvent;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import static win.leizhang.demo.springboot.mq.utils.MqConstant.LISTENER_DEMO;
 import static win.leizhang.demo.springboot.mq.utils.MqConstant.SENDER_DEMO;

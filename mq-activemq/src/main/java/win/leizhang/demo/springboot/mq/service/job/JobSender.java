@@ -1,13 +1,13 @@
 package win.leizhang.demo.springboot.mq.service.job;
 
 import com.alibaba.fastjson.JSON;
-import com.crt.jms.mq.JmsClusterMgr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import win.leizhang.demo.springboot.mq.service.bo.MessageBO;
+import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
 import java.util.Date;
 import java.util.UUID;
@@ -23,7 +23,7 @@ import static win.leizhang.demo.springboot.mq.utils.MqConstant.msgPropertyMap;
 public class JobSender {
 
     @Autowired
-    JmsClusterMgr jmsClusterMgr;
+    private JmsClusterMgr jmsClusterMgr;
 
     @Value("${win.leizhang.random.value}")
     private String value;
@@ -44,7 +44,7 @@ public class JobSender {
         System.out.println("send vTopic finish!");
     }
 
-    @Scheduled(cron = "1/9 * * * * ?")
+    @Scheduled(cron = "1/3 * * * * ?")
     public void jobSenderQueue() {
 
         MessageBO bo = new MessageBO();
