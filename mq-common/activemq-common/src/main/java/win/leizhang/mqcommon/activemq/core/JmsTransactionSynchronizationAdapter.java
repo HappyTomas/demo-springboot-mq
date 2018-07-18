@@ -6,7 +6,7 @@ import win.leizhang.mqcommon.activemq.core.thread.SendMessageThread;
 
 import java.util.Map;
 
-public class JMSTransactionSynchronizationAdapter implements TransactionSynchronization, Ordered {
+public class JmsTransactionSynchronizationAdapter implements TransactionSynchronization, Ordered {
     private Object msg;
     private String destName;
     private boolean queue;
@@ -14,7 +14,7 @@ public class JMSTransactionSynchronizationAdapter implements TransactionSynchron
     private JmsClusterMgr jmsClusterMgr;
     private Map<String, Object> msgPropertyMap;
 
-    public JMSTransactionSynchronizationAdapter(JmsClusterMgr jmsClusterMgr, Object msg, boolean queue, String destName, boolean persitent, Map<String, Object> msgPropertyMap) {
+    public JmsTransactionSynchronizationAdapter(JmsClusterMgr jmsClusterMgr, Object msg, boolean queue, String destName, boolean persitent, Map<String, Object> msgPropertyMap) {
         this.jmsClusterMgr = jmsClusterMgr;
         this.msg = msg;
         this.destName = destName;

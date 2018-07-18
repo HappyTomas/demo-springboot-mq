@@ -10,7 +10,7 @@ import org.springframework.jms.IllegalStateException;
 import org.springframework.jms.JmsSecurityException;
 import org.springframework.jms.UncategorizedJmsException;
 import org.springframework.jms.core.ProducerCallback;
-import win.leizhang.mqcommon.activemq.core.JDBCUtilSing;
+import win.leizhang.mqcommon.activemq.core.JdbcSingle;
 import win.leizhang.mqcommon.activemq.core.JmsBroker;
 import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 
@@ -21,8 +21,6 @@ import java.net.ConnectException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.springframework.jms.IllegalStateException;
 
 public class SendMessageThread extends Thread {
     private static Logger logger = LoggerFactory.getLogger(SendMessageThread.class.getName());
@@ -179,7 +177,7 @@ public class SendMessageThread extends Thread {
     private void updateMqSenderStatus(String msgId) {
         String sql = " update mq_sender set status = 0 where msg_id = ? ";
         Object params[] = new Object[]{msgId};
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         instance.executeUpdate(sql, params);
     }
 }

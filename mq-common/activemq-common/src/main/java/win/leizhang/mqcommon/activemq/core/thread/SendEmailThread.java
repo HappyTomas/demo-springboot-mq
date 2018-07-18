@@ -3,7 +3,7 @@ package win.leizhang.mqcommon.activemq.core.thread;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import win.leizhang.mqcommon.activemq.core.JDBCUtilSing;
+import win.leizhang.mqcommon.activemq.core.JdbcSingle;
 import win.leizhang.mqcommon.activemq.model.Email;
 import win.leizhang.mqcommon.activemq.model.MessageSendCommDTO;
 import win.leizhang.mqcommon.activemq.utils.HttpClientUtil;
@@ -35,7 +35,7 @@ public class SendEmailThread extends Thread {
         MessageSendCommDTO dto = null;
         String sql = " select user_name,password,channel,eventId,title,user_email,topic,code,url from mq_email where topic = ? ";
         Object params[] = new Object[]{topic};
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         Email email = instance.getEmailSetting(sql, params);
         if (email == null) {
             logger.info("邮件发送失败，缺少邮件参数配置");

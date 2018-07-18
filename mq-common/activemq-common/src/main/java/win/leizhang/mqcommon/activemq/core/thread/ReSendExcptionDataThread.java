@@ -4,7 +4,7 @@ package win.leizhang.mqcommon.activemq.core.thread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.core.ProducerCallback;
-import win.leizhang.mqcommon.activemq.core.JDBCUtilSing;
+import win.leizhang.mqcommon.activemq.core.JdbcSingle;
 import win.leizhang.mqcommon.activemq.core.JmsBroker;
 import win.leizhang.mqcommon.activemq.core.JmsClusterMgr;
 import win.leizhang.mqcommon.activemq.model.MqSender;
@@ -140,14 +140,14 @@ public class ReSendExcptionDataThread extends Thread {
 
     private List<MqSender> getMqSenderList(Object params[]) {
         String sql = getSearchSql(params);
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         return instance.executeQuery(sql, params);
     }
 
     private void updateMqSenderStatus(MqSender mqSender) {
         String sql = " update mq_sender set status = 1 , last_resend_time = sysdate() where msg_id = ? ";
         Object params[] = new Object[]{mqSender.getMsgId()};
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         instance.executeUpdate(sql, params);
     }
 

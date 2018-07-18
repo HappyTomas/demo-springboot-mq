@@ -9,11 +9,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JDBCUtilSing {
+/**
+ * jdbc工具类
+ */
+public class JdbcSingle {
 
     private DataSource dataSource;
 
-    public JDBCUtilSing(DataSource dataSource) {
+    public JdbcSingle(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 

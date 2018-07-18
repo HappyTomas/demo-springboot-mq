@@ -2,7 +2,7 @@ package win.leizhang.mqcommon.activemq.core.thread;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import win.leizhang.mqcommon.activemq.core.JDBCUtilSing;
+import win.leizhang.mqcommon.activemq.core.JdbcSingle;
 import win.leizhang.mqcommon.activemq.model.MqReceiver;
 
 import javax.sql.DataSource;
@@ -29,7 +29,7 @@ public class ReceiveWriteDBThread extends Thread {
     private void writeMsgToDB() throws Exception {
         String sql = " insert into mq_receiver (topic_queue,msg_text,msg_time,msg_id,status,system_name) values (?,?,?,?,?,?) ";
         Object params[] = new Object[]{mqReceiver.getTopicQueue(), mqReceiver.getMsgText(), mqReceiver.getMsgTime(), mqReceiver.getMsgId(), mqReceiver.getStatus(), mqReceiver.getSystemName()};
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         instance.executeUpdate(sql, params);
     }
 

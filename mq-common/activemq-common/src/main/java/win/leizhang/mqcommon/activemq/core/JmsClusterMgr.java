@@ -28,8 +28,6 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Map.Entry;
 
-import org.springframework.jms.IllegalStateException;
-
 
 public class JmsClusterMgr {
     private static Logger logger = LoggerFactory.getLogger(JmsClusterMgr.class.getName());
@@ -132,7 +130,7 @@ public class JmsClusterMgr {
 
     private void afterCommit(Object msg, String destName, boolean queue, boolean persitent,
                              Map<String, Object> msgPropertyMap) {
-        TransactionSynchronizationManager.registerSynchronization(new JMSTransactionSynchronizationAdapter(
+        TransactionSynchronizationManager.registerSynchronization(new JmsTransactionSynchronizationAdapter(
                 JmsClusterMgr.this, msg, queue, destName, persitent, msgPropertyMap));
     }
 
@@ -549,6 +547,11 @@ public class JmsClusterMgr {
         this.jmsConsumerTaskExecutor = jmsConsumerTaskExecutor;
     }
 
+    /**
+     * 消费到的消息写db，这个建议调用方自己实现
+     *
+     * @param objMsg
+     */
     public void writeReceiveMsgToDB(TextMessage objMsg) {
         try {
             String msgTime = objMsg.getStringProperty("msgTime");
@@ -579,13 +582,20 @@ public class JmsClusterMgr {
         }
     }
 
-    private void writeMqSenderToDB(String topic, String msgText, Map<String, Object> msgPropertyMap) {
+    /**
+     * 生产的消息写db
+     *
+     * @param topic
+     * @param msgText
+     * @param msgPropertyMap
+     */
+    public void writeMqSenderToDB(String topic, String msgText, Map<String, Object> msgPropertyMap) {
         String sql = " insert into mq_sender (topic,msg_text,status,system_name,msg_time,msg_id) values (?,?,?,?,?,?) ";
         String systemName = msgPropertyMap.get(SYSTEM_NAME) == null ? "" : msgPropertyMap.get(SYSTEM_NAME).toString();
         String msgId = msgPropertyMap.get("msgId").toString();
         String msgTime = msgPropertyMap.get("msgTime").toString();
         Object params[] = new Object[]{topic, msgText, "1", systemName, msgTime, msgId};
-        JDBCUtilSing instance = new JDBCUtilSing(dataSource);
+        JdbcSingle instance = new JdbcSingle(dataSource);
         instance.executeUpdate(sql, params);
     }
 
