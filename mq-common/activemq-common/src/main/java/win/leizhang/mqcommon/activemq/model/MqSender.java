@@ -1,6 +1,8 @@
 package win.leizhang.mqcommon.activemq.model;
 
-public class MqSender {
+import java.io.Serializable;
+
+public class MqSender implements Serializable {
     private String topic;
     private String msgText;
     private String msgTime;

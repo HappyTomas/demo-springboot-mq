@@ -55,6 +55,11 @@
             <artifactId>mq-common</artifactId>
             <version>1.1.12</version>
         </dependency>
+        <dependency>
+            <groupId>win.leizhang.demo.springboot.mq</groupId>
+            <artifactId>activemq-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
         <!-- other -->
 

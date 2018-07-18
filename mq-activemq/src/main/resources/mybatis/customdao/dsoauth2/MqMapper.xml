@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="win.leizhang.demo.springboot.mq.dal.customdao.dao.dsoauth2.MqMapper">
+
+    <select id="getSenderCountList" resultType="win.leizhang.mqcommon.activemq.model.MqCountResult">
+		SELECT topic, 
+			count(0) as count,
+			DATE_FORMAT(msg_time,'%Y-%m-%d') as msgTime 
+		FROM mq_sender
+		where 
+			msg_time &gt;= #{startDate}
+		and msg_time &lt;= #{endDate} 
+		and status = '1'
+		GROUP BY topic,DATE_FORMAT(msg_time,'%Y-%m-%d') 
+		ORDER BY msg_time ASC
+	</select>
+    <select id="getReceiverCountList" resultType="win.leizhang.mqcommon.activemq.model.MqCountResult">
+	SELECT 
+		topic_queue as topic, 
+		count(0) as count,
+		DATE_FORMAT(msg_time,'%Y-%m-%d') as msgTime 
+	FROM mq_receiver 
+	where 
+		msg_time &gt;= #{startDate}
+	and msg_time &lt;= #{endDate} 
+	GROUP BY topic_queue,DATE_FORMAT(msg_time,'%Y-%m-%d') 
+	ORDER BY msg_time ASC;
+	</select>
+
+    <insert id="insertMqCountResult" parameterType="win.leizhang.mqcommon.activemq.model.MqCountResult">
+		insert into mq_compare(
+			sender_topic,
+			receiver_queue,
+			sender_count,
+			receiver_count,
+			compare_date,
+			create_time
+		)values(
+			#{topic},
+			#{topicQueue},
+			#{senderCount},
+			#{receiverCount},
+			#{msgTime},
+			sysdate()
+		)
+	
+	</insert>
+
+    <delete id="deleteSender">
+		delete from mq_sender where msg_time &lt;#{keepDate}
+	</delete>
+
+    <delete id="deleteReceiver">
+		delete from mq_receiver where msg_time &lt;#{keepDate}
+	</delete>
+
+</mapper>
