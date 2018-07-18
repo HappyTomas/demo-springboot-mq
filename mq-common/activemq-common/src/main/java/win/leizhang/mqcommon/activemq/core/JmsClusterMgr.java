@@ -116,7 +116,6 @@ public class JmsClusterMgr {
         String msgId = uuid.substring(0, 8) + random.nextInt(10) + uuid.substring(9, 13) + random.nextInt(10)
                 + uuid.substring(14, 18) + random.nextInt(10) + uuid.substring(19, 23) + random.nextInt(10)
                 + uuid.substring(24);
-        // TODO
         String msgTime = LocalDateTime.now().toString();
         msgPropertyMap.put("msgId", msgId);
         msgPropertyMap.put("msgTime", msgTime);
