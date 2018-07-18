@@ -3,7 +3,8 @@ package win.leizhang.mqcommon.activemq.utils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,17 +12,14 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URLDecoder;
 
+/**
+ * 跟进参考demo-oauth2项目的例子
+ */
 public class HttpClientUtil {
-    private static Logger logger = LoggerFactory.getLogger(HttpClientUtil.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
 
-    public static HttpClientUtil getInstance() {
-        return new HttpClientUtil();
-    }
-
+    //post请求返回结果
     public String httpPost(String url, String jsonStr) {
-        //post请求返回结果
-        @SuppressWarnings("resource")
-        DefaultHttpClient httpClient = new DefaultHttpClient();
         String str = "";
         HttpPost method = new HttpPost(url);
         try {
@@ -32,7 +30,7 @@ public class HttpClientUtil {
                 entity.setContentType("application/json");
                 method.setEntity(entity);
             }
-            HttpResponse result = httpClient.execute(method);
+            HttpResponse result = createClientDefault().execute(method);
             url = URLDecoder.decode(url, "UTF-8");
             //请求发送成功，并得到响应
             if (result.getStatusLine().getStatusCode() == 200) {
@@ -52,4 +50,10 @@ public class HttpClientUtil {
         }
         return str;
     }
+
+    // 构建普通的http请求
+    private CloseableHttpClient createClientDefault() {
+        return HttpClients.createDefault();
+    }
+
 }
