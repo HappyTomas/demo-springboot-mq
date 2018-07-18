@@ -1,4 +1,4 @@
-package win.leizhang.mqcommon.activemq.db;
+package win.leizhang.mqcommon.activemq.core;
 
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import win.leizhang.mqcommon.activemq.model.Email;
