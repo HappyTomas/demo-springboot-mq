@@ -1,0 +1,490 @@
+0
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'queue://VConsumers.A.VirtualTopic.mMember.POINTS_GIVE_VALUE-6f5e' for key 'mq_receiver_index3'
+        at sun.reflect.GeneratedConstructorAccessor72.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+        at com.mysql.jdbc.Util.getInstance(Util.java:408)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+        at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+        at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+        at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2843)
+        at com.alibaba.druid.filter.FilterAdapter.preparedStatement_executeUpdate(FilterAdapter.java:1091)
+        at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeUpdate(FilterEventAdapter.java:491)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2841)
+        at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeUpdate(PreparedStatementProxyImpl.java:194)
+        at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
+        at com.crt.jms.mq.db.JDBCUtilSing.executeUpdate(JDBCUtilSing.java:131)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.writeMsgToDB(ReceiveWriteDBThread.java:35)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.run(ReceiveWriteDBThread.java:24)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+1
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'queue://VConsumers.A.VirtualTopic.mMember.POINTS_GIVE_VALUE-8b67' for key 'mq_receiver_index3'
+        at sun.reflect.GeneratedConstructorAccessor72.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+        at com.mysql.jdbc.Util.getInstance(Util.java:408)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+        at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+        at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+        at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2843)
+        at com.alibaba.druid.filter.FilterAdapter.preparedStatement_executeUpdate(FilterAdapter.java:1091)
+        at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeUpdate(FilterEventAdapter.java:491)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2841)
+        at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeUpdate(PreparedStatementProxyImpl.java:194)
+        at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
+        at com.crt.jms.mq.db.JDBCUtilSing.executeUpdate(JDBCUtilSing.java:131)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.writeMsgToDB(ReceiveWriteDBThread.java:35)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.run(ReceiveWriteDBThread.java:24)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+2
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'queue://VConsumers.A.VirtualTopic.mMember.POINTS_GIVE_VALUE-5444' for key 'mq_receiver_index3'
+        at sun.reflect.GeneratedConstructorAccessor73.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+        at com.mysql.jdbc.Util.getInstance(Util.java:408)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+        at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+        at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+        at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+        at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+        at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2843)
+        at com.alibaba.druid.filter.FilterAdapter.preparedStatement_executeUpdate(FilterAdapter.java:1091)
+        at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeUpdate(FilterEventAdapter.java:491)
+        at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2841)
+        at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeUpdate(PreparedStatementProxyImpl.java:194)
+        at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
+        at com.crt.jms.mq.db.JDBCUtilSing.executeUpdate(JDBCUtilSing.java:131)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.writeMsgToDB(ReceiveWriteDBThread.java:35)
+        at com.crt.jms.mq.thread.ReceiveWriteDBThread.run(ReceiveWriteDBThread.java:24)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+3
+
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '75e4307697cda0478e7a56586166b161589d' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2843)
+	at com.alibaba.druid.filter.FilterAdapter.preparedStatement_executeUpdate(FilterAdapter.java:1091)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeUpdate(FilterEventAdapter.java:491)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2841)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeUpdate(PreparedStatementProxyImpl.java:194)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
+	at com.crt.jms.mq.db.JDBCUtilSing.executeUpdate(JDBCUtilSing.java:131)
+	at com.crt.jms.mq.JmsClusterMgr.writeMqSenderToDB(JmsClusterMgr.java:761)
+	at com.crt.jms.mq.JmsClusterMgr.sendNormalMsgOnTransaction(JmsClusterMgr.java:140)
+	at com.crt.jms.mq.JmsClusterMgr.sendPstTopicMsgOnTransaction(JmsClusterMgr.java:451)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl.preP60SendEvent(UpgradeEventActionServiceImpl.java:97)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$FastClassBySpringCGLIB$$724c454d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$EnhancerBySpringCGLIB$$8735e679.preP60SendEvent(<generated>)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$FastClassBySpringCGLIB$$724c454d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$EnhancerBySpringCGLIB$$3ad00095.preP60SendEvent(<generated>)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl.addGrowth(GrowthAddServiceImpl.java:109)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$FastClassBySpringCGLIB$$c4078e0f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$EnhancerBySpringCGLIB$$60d820e.addGrowth(<generated>)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$FastClassBySpringCGLIB$$c4078e0f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$EnhancerBySpringCGLIB$$f847cd96.addGrowth(<generated>)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl.addValue(GrowthActionFacadeImpl.java:48)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl$$FastClassBySpringCGLIB$$65109bb0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.crt.member.growth.data.bootstrap.aspect.FacadeServiceAspect.aroundFacadeMethod(FacadeServiceAspect.java:44)
+	at sun.reflect.GeneratedMethodAccessor369.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl$$EnhancerBySpringCGLIB$$9bc16e8.addValue(<generated>)
+	at com.alibaba.dubbo.common.bytecode.Wrapper5.invokeMethod(Wrapper5.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.crt.sdk.trace.dubbo.TraceDubboFilter.invoke(TraceDubboFilter.java:82)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:70)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:132)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.reply(DubboProtocol.java:113)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.handleRequest(HeaderExchangeHandler.java:84)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.received(HeaderExchangeHandler.java:170)
+	at com.alibaba.dubbo.remoting.transport.DecodeHandler.received(DecodeHandler.java:52)
+	at com.alibaba.dubbo.remoting.transport.dispatcher.ChannelEventRunnable.run(ChannelEventRunnable.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '878b7c772a2398483248265086ff0c1b6b1c' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2843)
+	at com.alibaba.druid.filter.FilterAdapter.preparedStatement_executeUpdate(FilterAdapter.java:1091)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeUpdate(FilterEventAdapter.java:491)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeUpdate(FilterChainImpl.java:2841)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeUpdate(PreparedStatementProxyImpl.java:194)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:256)
+	at com.crt.jms.mq.db.JDBCUtilSing.executeUpdate(JDBCUtilSing.java:131)
+	at com.crt.jms.mq.JmsClusterMgr.writeMqSenderToDB(JmsClusterMgr.java:761)
+	at com.crt.jms.mq.JmsClusterMgr.sendNormalMsgOnTransaction(JmsClusterMgr.java:140)
+	at com.crt.jms.mq.JmsClusterMgr.sendPstTopicMsgOnTransaction(JmsClusterMgr.java:451)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl.preP60SendEvent(UpgradeEventActionServiceImpl.java:97)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$FastClassBySpringCGLIB$$724c454d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$EnhancerBySpringCGLIB$$8735e679.preP60SendEvent(<generated>)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$FastClassBySpringCGLIB$$724c454d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.UpgradeEventActionServiceImpl$$EnhancerBySpringCGLIB$$3ad00095.preP60SendEvent(<generated>)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl.addGrowth(GrowthAddServiceImpl.java:109)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$FastClassBySpringCGLIB$$c4078e0f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$EnhancerBySpringCGLIB$$60d820e.addGrowth(<generated>)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$FastClassBySpringCGLIB$$c4078e0f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.service.business.impl.GrowthAddServiceImpl$$EnhancerBySpringCGLIB$$f847cd96.addGrowth(<generated>)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl.addValue(GrowthActionFacadeImpl.java:48)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl$$FastClassBySpringCGLIB$$65109bb0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.crt.member.growth.data.bootstrap.aspect.FacadeServiceAspect.aroundFacadeMethod(FacadeServiceAspect.java:44)
+	at sun.reflect.GeneratedMethodAccessor369.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.crt.member.growth.data.facade.GrowthActionFacadeImpl$$EnhancerBySpringCGLIB$$9bc16e8.addValue(<generated>)
+	at com.alibaba.dubbo.common.bytecode.Wrapper5.invokeMethod(Wrapper5.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.crt.sdk.trace.dubbo.TraceDubboFilter.invoke(TraceDubboFilter.java:82)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:70)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:132)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.reply(DubboProtocol.java:113)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.handleRequest(HeaderExchangeHandler.java:84)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.received(HeaderExchangeHandler.java:170)
+	at com.alibaba.dubbo.remoting.transport.DecodeHandler.received(DecodeHandler.java:52)
+	at com.alibaba.dubbo.remoting.transport.dispatcher.ChannelEventRunnable.run(ChannelEventRunnable.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+4
+
+
+|2018-03-12 18:55:27.446|ActiveMQ Transport: tcp:///10.0.200.85:61616@21400|30811|mgrowth-business-service|com.crt.member.growth.business.service.mq.jms.PointsGiveEvent||ERROR||###+-###|##+-##|##+-##||发生异常，没有处理的Message写入临时表，请查看[mq_receiver]日志
+|2018-03-12 18:55:27.447|ActiveMQ Transport: tcp:///10.0.200.85:61616@21400|30811|mgrowth-business-service|com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl||ERROR||###+-###|##+-##|##+-##||成长值data服务异常
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method getCommon in the service com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade. Tried 1 times of the providers [10.0.200.94:30810] (1/2) from the registry 10.0.200.75:2181 on the consumer 10.0.200.94 using the dubbo version 2.8.4. Last error is: Rpc invoker for service interface com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade -> dubbo://10.0.200.94:30810/com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade?anyhost=true&application=mgrowth_business_service&check=false&default.check=false&default.reference.filter=DubboConsumerFilter&default.retries=0&default.timeout=10000&default.version=1.0.0&dubbo=2.8.4&generic=false&interface=com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade&methods=getCommon&pid=4692&revision=1.0.0-SNAPSHOT&side=consumer&timestamp=1520850028827 on consumer 10.0.200.94
+use dubbo version 2.8.4 is DESTROYED, can not be invoked any more!
+        at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.common.bytecode.proxy7.getCommon(proxy7.java) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl.getAccountCommon(GrowthQueryServiceImpl.java:57) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$FastClassBySpringCGLIB$$122ce644.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$EnhancerBySpringCGLIB$$5a4e0368.getAccountCommon(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$FastClassBySpringCGLIB$$122ce644.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$EnhancerBySpringCGLIB$$99c8db5e.getAccountCommon(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl.handle(PointsGiveHandlingServiceImpl.java:62) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$FastClassBySpringCGLIB$$3ea1cade.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$EnhancerBySpringCGLIB$$996b6176.handle(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$FastClassBySpringCGLIB$$3ea1cade.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$EnhancerBySpringCGLIB$$17332068.handle(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent.execute(PointsGiveEvent.java:94) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent.onMessage(PointsGiveEvent.java:49) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$FastClassBySpringCGLIB$$5520091c.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$EnhancerBySpringCGLIB$$4667f2f0.onMessage(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$FastClassBySpringCGLIB$$5520091c.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$EnhancerBySpringCGLIB$$9ddfba76.onMessag
+(END)
+
+5
+
+|2018-03-12 18:55:27.445|ActiveMQ Transport: tcp:///10.0.200.85:61616@21400|30811|mgrowth-business-service|com.crt.member.growth.business.service.mq.jms.PointsGiveEvent||ERROR||###+
+-###|##+-##|##+-##||发生异常，没有处理的Message写入临时表，请查看[mq_receiver]日志
+|2018-03-12 18:55:27.446|ActiveMQ Transport: tcp:///10.0.200.85:61616@21400|30811|mgrowth-business-service|com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl||ERROR||###+-###|##+-##|##+-##||成长值data服务异常
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method getCommon in the service com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade. Tried 1 times of the providers [10.0.200.94:30810] (1/2) from the registry 10.0.200.75:2181 on the consumer 10.0.200.94 using the dubbo version 2.8.4. Last error is: Rpc invoker for service interface com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade -> dubbo://10.0.200.94:30810/com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade?anyhost=true&application=mgrowth_business_service&check=false&default.check=false&default.reference.filter=DubboConsumerFilter&default.retries=0&default.timeout=10000&default.version=1.0.0&dubbo=2.8.4&generic=false&interface=com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade&methods=getCommon&pid=4692&revision=1.0.0-SNAPSHOT&side=consumer&timestamp=1520850028827 on consumer 10.0.200.94
+use dubbo version 2.8.4 is DESTROYED, can not be invoked any more!
+        at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.common.bytecode.proxy7.getCommon(proxy7.java) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl.getAccountCommon(GrowthQueryServiceImpl.java:57) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$FastClassBySpringCGLIB$$122ce644.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$EnhancerBySpringCGLIB$$5a4e0368.getAccountCommon(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$FastClassBySpringCGLIB$$122ce644.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.dependent.growthdata.GrowthQueryServiceImpl$$EnhancerBySpringCGLIB$$99c8db5e.getAccountCommon(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl.handle(PointsGiveHandlingServiceImpl.java:62) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$FastClassBySpringCGLIB$$3ea1cade.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$EnhancerBySpringCGLIB$$996b6176.handle(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$FastClassBySpringCGLIB$$3ea1cade.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.business.impl.PointsGiveHandlingServiceImpl$$EnhancerBySpringCGLIB$$17332068.handle(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent.execute(PointsGiveEvent.java:94) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent.onMessage(PointsGiveEvent.java:49) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$FastClassBySpringCGLIB$$5520091c.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$EnhancerBySpringCGLIB$$4667f2f0.onMessage(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$FastClassBySpringCGLIB$$5520091c.invoke(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.6.jar:1.1.6]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.14.RELEASE.jar:4.3.14.RELEASE]
+        at com.crt.member.growth.business.service.mq.jms.PointsGiveEvent$$EnhancerBySpringCGLIB$$9ddfba76.onMessage(<generated>) ~[mgrowth-business-service-1.0.jar:1.0]
+        at org.apache.activemq.ActiveMQMessageConsumer.dispatch(ActiveMQMessageConsumer.java:1401) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.ActiveMQSessionExecutor.dispatch(ActiveMQSessionExecutor.java:131) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.ActiveMQSessionExecutor.execute(ActiveMQSessionExecutor.java:81) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.ActiveMQSession.dispatch(ActiveMQSession.java:1742) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.ActiveMQConnection$3.processMessageDispatch(ActiveMQConnection.java:1836) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.command.MessageDispatch.visit(MessageDispatch.java:113) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.ActiveMQConnection.onCommand(ActiveMQConnection.java:1816) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.ResponseCorrelator.onCommand(ResponseCorrelator.java:116) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.MutexTransport.onCommand(MutexTransport.java:50) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.WireFormatNegotiator.onCommand(WireFormatNegotiator.java:125) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.AbstractInactivityMonitor.onCommand(AbstractInactivityMonitor.java:301) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.TransportSupport.doConsume(TransportSupport.java:83) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:233) ~[activemq-client-5.14.5.jar:5.14.5]
+        at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:215) ~[activemq-client-5.14.5.jar:5.14.5]
+        at java.lang.Thread.run(Thread.java:745) [?:1.8.0_91]
+Caused by: com.alibaba.dubbo.rpc.RpcException: Rpc invoker for service interface com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade -> dubbo://10.0.200.94:30810/com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade?anyhost=true&application=mgrowth_business_service&check=false&default.check=false&default.reference.filter=DubboConsumerFilter&default.retries=0&default.timeout=10000&default.version=1.0.0&dubbo=2.8.4&generic=false&interface=com.crt.member.growth.data.api.facade.GrowthAccountInfoFacade&methods=getCommon&pid=4692&revision=1.0.0-SNAPSHOT&side=consumer&timestamp=1520850028827 on consumer 10.0.200.94 use dubboversion 2.8.4 is DESTROYED, can not be invoked any more!
+        at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:124) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.crt.member.growth.business.common.dubbo.DubboConsumerFilter.invoke(DubboConsumerFilter.java:40) ~[mgrowth-business-common-1.0.0-SNAPSHOT.jar:?]
+        at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:53) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.crt.sdk.trace.dubbo.TraceDubboFilter.invoke(TraceDubboFilter.java:82) ~[trace-dubbo-1.0.5.jar:?]
+        at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53) ~[dubbo-2.8.4.jar:2.8.4]
+        at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77) ~[dubbo-2.8.4.jar:2.8.4]
+        ... 71 more
+6

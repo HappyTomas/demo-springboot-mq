@@ -14,7 +14,7 @@
 ***branch:master***
 
 **2018-7-20**
-- 1.需要优化mq组件，可参考[bug_log](#log)文件；
+- 1.需要优化mq组件，可参考[bug_logs](#logs)文件；
 - 2.mq_sender表，主键生成id会重复，概率还很大哦；
 - 3.mq_receiver_index3的唯一约束，要求[topic_queue`, `msg_id`]组合唯一。解决：1.增加主键自增的id；2.目前msg_id没有完全做到唯一；3.topic_queue也要唯一，追加'-6f5e'标识；
 - 4.`msg_time`要支持毫秒维度；
