@@ -15,7 +15,11 @@ public class RabbitmqSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void send(String topic, String message) {
-        rabbitTemplate.convertAndSend(topic, message);
+    public void sendDirect(String routingKey, String message) {
+        rabbitTemplate.convertAndSend(routingKey, message);
+    }
+
+    public void sendTopic(String exchange, String routingKey, String message) {
+        rabbitTemplate.convertAndSend(exchange, routingKey, message);
     }
 }

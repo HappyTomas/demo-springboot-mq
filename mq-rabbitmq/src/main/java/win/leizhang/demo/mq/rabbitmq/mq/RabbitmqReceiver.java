@@ -16,4 +16,9 @@ public class RabbitmqReceiver {
         System.out.println("收到的 message 是：" + message);
     }
 
+    //@RabbitListener(queues = "rpc-queue-zhisheng")
+    public void receive2(String message) {
+        System.out.println("--------receive ------- " + message);
+    }
+
 }

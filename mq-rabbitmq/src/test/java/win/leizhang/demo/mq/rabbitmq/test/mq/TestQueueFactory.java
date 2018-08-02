@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  * 压测，生产者方法
  * Created by zealous on 2018/8/2.
  */
-public class TestRabbitmqFactory extends BaseTestCase {
+public class TestQueueFactory extends BaseTestCase {
 
     @Autowired
     private RabbitmqSender sender;
@@ -35,7 +35,7 @@ public class TestRabbitmqFactory extends BaseTestCase {
                 try {
                     start.await();
                     for (int j = 0; j < 1000; j++) {
-                        sender.send("demo", "发送消息----demo-----" + j);
+                        sender.sendDirect("demo", "发送消息----demo-----" + j);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

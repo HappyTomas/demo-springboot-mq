@@ -15,32 +15,39 @@ import javax.annotation.PostConstruct;
  */
 @Slf4j
 @Component
-public class RabbitmqFactory {
+public class QueueFactory {
 
     @Autowired
     private RabbitmqSender sender;
+
+    @Bean
+    public Queue queueDemo() {
+        return new Queue("demo");
+    }
+
+    @Bean
+    public Queue queueZhanglei() {
+        return new Queue("zhanglei");
+    }
+
+    @Bean
+    public Queue zs() {
+        return new Queue("zhisheng");
+    }
 
     @PostConstruct
     public void init() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        for (int i = 0; i < 100; i++) {
-            sender.send("demo", "发送消息----demo-----" + i);
+        for (int i = 0; i < 10; i++) {
+            sender.sendDirect("demo", "发送消息----demo-----" + i);
+
+            sender.sendTopic("exchange-demo", "tpc-zhanglei", "发送topic----demo-----" + i);
         }
 
         stopWatch.stop();
-        log.info("发送消息耗时：{}ms", stopWatch.getTotalTimeMillis());
-    }
-
-    @Bean
-    public Queue testQueue() {
-        return new Queue("demo");
-    }
-
-    @Bean
-    public Queue q1() {
-        return new Queue("zhisheng");
+        log.info("发送消息耗时:[{}]ms", stopWatch.getTotalTimeMillis());
     }
 
 }
