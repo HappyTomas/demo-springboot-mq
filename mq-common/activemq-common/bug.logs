@@ -488,3 +488,37 @@ Caused by: com.alibaba.dubbo.rpc.RpcException: Rpc invoker for service interface
         at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77) ~[dubbo-2.8.4.jar:2.8.4]
         ... 71 more
 6
+
+Exception in thread "Thread-4" Exception in thread "ContainerBackgroundProcessor[StandardEngine[Tomcat-1]]" java.lang.OutOfMemoryError: Java heap space
+        at java.lang.Class.newReflectionData(Class.java:2511)
+        at java.lang.Class.reflectionData(Class.java:2503)
+        at java.lang.Class.privateGetDeclaredFields(Class.java:2577)
+        at java.lang.Class.getDeclaredField(Class.java:2068)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run(AtomicReferenceFieldUpdater.java:323)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run(AtomicReferenceFieldUpdater.java:321)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.<init>(AtomicReferenceFieldUpdater.java:320)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater(AtomicReferenceFieldUpdater.java:110)
+        at java.sql.SQLException.<clinit>(SQLException.java:372)
+        at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545)
+        at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133)
+        at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77)
+        at com.alibaba.druid.pool.DruidPooledResultSet.checkException(DruidPooledResultSet.java:55)
+        at com.alibaba.druid.pool.DruidPooledResultSet.getString(DruidPooledResultSet.java:259)
+        at win.leizhang.mqcommon.activemq.core.JdbcSingle.executeQuery(JdbcSingle.java:59)
+        at win.leizhang.mqcommon.activemq.core.thread.ReSendExcptionDataThread.getMqSenderList(ReSendExcptionDataThread.java:144)
+        at win.leizhang.mqcommon.activemq.core.thread.ReSendExcptionDataThread.run(ReSendExcptionDataThread.java:36)
+java.lang.OutOfMemoryError: Java heap space
+        at java.util.TreeMap.put(TreeMap.java:540)
+        at java.util.TreeSet.add(TreeSet.java:255)
+        at java.util.AbstractCollection.addAll(AbstractCollection.java:344)
+        at java.util.TreeSet.addAll(TreeSet.java:312)
+        at org.apache.catalina.webresources.Cache.backgroundProcess(Cache.java:185)
+        at org.apache.catalina.webresources.StandardRoot.backgroundProcess(StandardRoot.java:605)
+        at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5631)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1390)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1394)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1394)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1362)
+        at java.lang.Thread.run(Thread.java:748)
+7
