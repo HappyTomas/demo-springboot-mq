@@ -11,14 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class RabbitmqReceiver {
 
-    @RabbitListener(queues = "zhisheng")
+    @RabbitListener(queues = "demo")
     public void receive(String message) {
         System.out.println("收到的 message 是：" + message);
-    }
-
-    //@RabbitListener(queues = "rpc-queue-zhisheng")
-    public void receive2(String message) {
-        System.out.println("--------receive ------- " + message);
     }
 
 }
