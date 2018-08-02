@@ -30,9 +30,19 @@ public class QueueFactory {
         return new Queue("zhanglei");
     }
 
-    @Bean
-    public Queue zs() {
-        return new Queue("zhisheng");
+    @Bean(name = "queue1")
+    public Queue queue() {
+        return new Queue("rpc.queue1");
+    }
+
+    @Bean(name = "queue2")
+    public Queue queue2() {
+        return new Queue("rpc.queue2");
+    }
+
+    @Bean(name = "queue3")
+    public Queue queue3() {
+        return new Queue("rpc.queue3");
     }
 
     @PostConstruct
@@ -44,6 +54,8 @@ public class QueueFactory {
             sender.sendDirect("demo", "发送消息----demo-----" + i);
 
             sender.sendTopic("exchange-demo", "tpc-zhanglei", "发送topic----demo-----" + i);
+
+            sender.sendFanout("exchange-fanout", "fanout广播" + i);
         }
 
         stopWatch.stop();

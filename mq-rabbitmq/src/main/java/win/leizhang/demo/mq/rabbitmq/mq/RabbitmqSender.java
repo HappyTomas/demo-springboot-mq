@@ -22,4 +22,8 @@ public class RabbitmqSender {
     public void sendTopic(String exchange, String routingKey, String message) {
         rabbitTemplate.convertAndSend(exchange, routingKey, message);
     }
+
+    public void sendFanout(String exchange, String message) {
+        rabbitTemplate.convertAndSend(exchange, "", message);
+    }
 }
