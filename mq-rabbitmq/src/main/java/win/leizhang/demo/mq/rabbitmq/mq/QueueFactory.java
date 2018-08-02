@@ -23,17 +23,17 @@ public class QueueFactory {
         return new Queue("zhanglei");
     }
 
-    @Bean(name = "queue1")
-    public Queue queue() {
+    @Bean
+    public Queue queue1() {
         return new Queue("rpc.queue1");
     }
 
-    @Bean(name = "queue2")
+    @Bean
     public Queue queue2() {
         return new Queue("rpc.queue2");
     }
 
-    @Bean(name = "queue3")
+    @Bean
     public Queue queue3() {
         return new Queue("rpc.queue3");
     }

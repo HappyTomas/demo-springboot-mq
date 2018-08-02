@@ -35,7 +35,7 @@ public class TestQueueFactory extends BaseTestCase {
                 try {
                     start.await();
                     for (int j = 0; j < 1000; j++) {
-                        sender.sendDirect("demo", "发送消息----demo-----" + j);
+                        sender.sendDirect("zhanglei", "发送消息----demo-----" + j);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
