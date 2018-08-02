@@ -21,6 +21,7 @@
         <!-- example -->
         <module>mq-activemq</module>
         <module>mq-kafka</module>
+        <module>mq-rabbitmq</module>
     </modules>
 
     <name>mq-parent</name>
