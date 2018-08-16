@@ -522,3 +522,125 @@ java.lang.OutOfMemoryError: Java heap space
         at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1362)
         at java.lang.Thread.run(Thread.java:748)
 7
+
+Exception in thread "Thread-4" Exception in thread "ContainerBackgroundProcessor[StandardEngine[Tomcat-1]]" java.lang.OutOfMemoryError: Java heap space
+        at java.lang.Class.newReflectionData(Class.java:2511)
+        at java.lang.Class.reflectionData(Class.java:2503)
+        at java.lang.Class.privateGetDeclaredFields(Class.java:2577)
+        at java.lang.Class.getDeclaredField(Class.java:2068)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run(AtomicReferenceFieldUpdater.java:323)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run(AtomicReferenceFieldUpdater.java:321)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.<init>(AtomicReferenceFieldUpdater.java:320)
+        at java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater(AtomicReferenceFieldUpdater.java:110)
+        at java.sql.SQLException.<clinit>(SQLException.java:372)
+        at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545)
+        at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133)
+        at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77)
+        at com.alibaba.druid.pool.DruidPooledResultSet.checkException(DruidPooledResultSet.java:55)
+        at com.alibaba.druid.pool.DruidPooledResultSet.getString(DruidPooledResultSet.java:259)
+        at win.leizhang.mqcommon.activemq.core.JdbcSingle.executeQuery(JdbcSingle.java:59)
+        at win.leizhang.mqcommon.activemq.core.thread.ReSendExcptionDataThread.getMqSenderList(ReSendExcptionDataThread.java:144)
+        at win.leizhang.mqcommon.activemq.core.thread.ReSendExcptionDataThread.run(ReSendExcptionDataThread.java:36)
+java.lang.OutOfMemoryError: Java heap space
+        at java.util.TreeMap.put(TreeMap.java:540)
+        at java.util.TreeSet.add(TreeSet.java:255)
+        at java.util.AbstractCollection.addAll(AbstractCollection.java:344)
+        at java.util.TreeSet.addAll(TreeSet.java:312)
+        at org.apache.catalina.webresources.Cache.backgroundProcess(Cache.java:185)
+        at org.apache.catalina.webresources.StandardRoot.backgroundProcess(StandardRoot.java:605)
+        at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5631)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1390)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1394)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1394)
+        at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1362)
+        at java.lang.Thread.run(Thread.java:748)
+
+8
+
+2018-08-16 11:29:03.948  INFO 4294 --- [       Thread-7] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'jmsProviderTaskExecutor'
+2018-08-16 11:29:04.020 ERROR 4294 --- [pool-2-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+java.lang.NoClassDefFoundError: Could not initialize class java.sql.SQLException
+        at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545) ~[druid-1.1.10.jar!/:1.1.10]
+        at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133) ~[druid-1.1.10.jar!/:1.1.10]
+        at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77) ~[druid-1.1.10.jar!/:1.1.10]
+        at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeUpdate(DruidPooledPreparedStatement.java:260) ~[druid-1.1.10.jar!/:1.1.10]
+        at win.leizhang.mqcommon.activemq.core.JdbcSingle.executeUpdate(JdbcSingle.java:125) ~[activemq-common-1.0.0.jar!/:?]
+        at win.leizhang.mqcommon.activemq.core.JmsClusterMgr.writeMqSenderToDB(JmsClusterMgr.java:603) ~[activemq-common-1.0.0.jar!/:?]
+        at win.leizhang.mqcommon.activemq.core.JmsClusterMgr.sendNormalMsgOnTransaction(JmsClusterMgr.java:124) ~[activemq-common-1.0.0.jar!/:?]
+        at win.leizhang.mqcommon.activemq.core.JmsClusterMgr.sendPstQueueMsgOnTransaction(JmsClusterMgr.java:288) ~[activemq-common-1.0.0.jar!/:?]
+        at win.leizhang.demo.springboot.mq.service.job.JobSender.jobSenderQueue(JobSender.java:55) ~[classes!/:1.0]
+        at win.leizhang.demo.springboot.mq.service.job.JobSender$$FastClassBySpringCGLIB$$fb36b542.invoke(<generated>) ~[classes!/:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.10.jar!/:1.1.10]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at win.leizhang.demo.springboot.mq.service.job.JobSender$$EnhancerBySpringCGLIB$$3d238e7c.jobSenderQueue(<generated>) ~[classes!/:1.0]
+        at win.leizhang.demo.springboot.mq.service.job.JobSender$$FastClassBySpringCGLIB$$fb36b542.invoke(<generated>) ~[classes!/:1.0]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:72) ~[druid-1.1.10.jar!/:1.1.10]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671) ~[spring-aop-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at win.leizhang.demo.springboot.mq.service.job.JobSender$$EnhancerBySpringCGLIB$$6b022786.jobSenderQueue(<generated>) ~[classes!/:1.0]
+        at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source) ~[?:?]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_171]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_171]
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65) ~[spring-context-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81) [spring-context-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_171]
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_171]
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_171]
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_171]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_171]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_171]
+        at java.lang.Thread.run(Thread.java:748) [?:1.8.0_171]
+
+2018-08-16 11:29:04.328  WARN 4294 --- [       Thread-7] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method 'close' failed on bean with name 'dsMaster': java.lang.NoClassDefFoundError: Could not initialize class com.mysql.jdbc.SQLError
+
+9
+
+2018-08-01 18:12:56.968  INFO 4294 --- [245:61616@37166] o.a.a.j.p.PooledConnectionFactory        : Expiring connection ActiveMQConnection {id=ID:localhost-46076-1531958298782-1:18760,clientId=ID:localhost-46076-1531958298782-0:18760,started=false} on IOException: null
+2018-08-01 18:12:56.968  INFO 4294 --- [245:61616@37160] o.a.a.j.p.PooledConnectionFactory        : Expiring connection ActiveMQConnection {id=ID:localhost-46076-1531958298782-1:18759,clientId=ID:localhost-46076-1531958298782-0:18759,started=false} on IOException: null
+2018-08-01 18:12:56.974  INFO 4294 --- [245:61616@37172] o.a.a.j.p.PooledConnectionFactory        : Expiring connection ActiveMQConnection {id=ID:localhost-46076-1531958298782-1:18761,clientId=ID:localhost-46076-1531958298782-0:18761,started=false} on IOException: null
+2018-08-01 18:12:56.976 ERROR 4294 --- [245:61616@47500] w.l.m.a.c.ConnExceptionListener          : JMS集群节点：tcp://119.23.24.245:61616 上对Destination VirtualTopic.demoMessage.DEMO_EVENT 的监听器出现故障javax.jms.JMSException: java.io.EOFException，监听修复线程已启动
+2018-08-01 18:12:56.977 ERROR 4294 --- [245:61616@47498] w.l.m.a.c.ConnExceptionListener          : JMS集群节点：tcp://119.23.24.245:61616 上对Destination VConsumers.A.VirtualTopic.demoMessage.DEMO_EVENT 的监听器出现故障javax.jms.JMSException: java.io.EOFException，监听修复线程已启动
+2018-08-01 18:12:58.018 ERROR 4294 --- [TaskExecutor-97] w.l.m.a.c.t.SendMessageThread            : JMS集群节点 tcp://119.23.24.245:61616修复线程已启动Uncategorized exception occurred during JMS processing; nested exception is javax.jms.JMSException: Error while attempting to retrieve a connection from the pool; nested exception is javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+org.springframework.jms.UncategorizedJmsException: Uncategorized exception occurred during JMS processing; nested exception is javax.jms.JMSException: Error while attempting to retrieve a connection from the pool; nested exception is javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.jms.support.JmsUtils.convertJmsAccessException(JmsUtils.java:316) ~[spring-jms-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+	at org.springframework.jms.support.JmsAccessor.convertJmsAccessException(JmsAccessor.java:169) ~[spring-jms-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+Caused by: javax.jms.JMSException: Error while attempting to retrieve a connection from the pool
+	at org.apache.activemq.jms.pool.PooledConnectionFactory.createJmsException(PooledConnectionFactory.java:266) ~[activemq-jms-pool-5.14.5.jar!/:5.14.5]
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:36) ~[activemq-client-5.14.5.jar!/:5.14.5]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+2018-08-01 18:12:58.134 ERROR 4294 --- [TaskExecutor-97] w.l.m.a.c.t.SendMessageThread            : 发送消息出现异常,8s后将进行第1次重新发送 Uncategorized exception occurred during JMS processing; nested exception is javax.jms.JMSException: Error while attempting to retrieve a connection from the pool; nested exception is javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+org.springframework.jms.UncategorizedJmsException: Uncategorized exception occurred during JMS processing; nested exception is javax.jms.JMSException: Error while attempting to retrieve a connection from the pool; nested exception is javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.jms.support.JmsUtils.convertJmsAccessException(JmsUtils.java:316) ~[spring-jms-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+	at org.springframework.jms.support.JmsAccessor.convertJmsAccessException(JmsAccessor.java:169) ~[spring-jms-4.3.18.RELEASE.jar!/:4.3.18.RELEASE]
+Caused by: javax.jms.JMSException: Error while attempting to retrieve a connection from the pool
+	at org.apache.activemq.jms.pool.PooledConnectionFactory.createJmsException(PooledConnectionFactory.java:266) ~[activemq-jms-pool-5.14.5.jar!/:5.14.5]
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://119.23.24.245:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:36) ~[activemq-client-5.14.5.jar!/:5.14.5]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+java.lang.NoClassDefFoundError: Could not initialize class java.sql.SQLException
+	at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77) ~[druid-1.1.10.jar!/:1.1.10]
+java.lang.NoClassDefFoundError: Could not initialize class java.sql.SQLException
+	at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77) ~[druid-1.1.10.jar!/:1.1.10]
+java.lang.NoClassDefFoundError: Could not initialize class java.sql.SQLException
+	at com.alibaba.druid.pool.DruidDataSource.handleConnectionException(DruidDataSource.java:1545) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledConnection.handleException(DruidPooledConnection.java:133) ~[druid-1.1.10.jar!/:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledStatement.checkException(DruidPooledStatement.java:77) ~[druid-1.1.10.jar!/:1.1.10]
+
+10
+
+11
