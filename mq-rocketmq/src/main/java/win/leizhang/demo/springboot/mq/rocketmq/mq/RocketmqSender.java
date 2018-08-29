@@ -50,10 +50,8 @@ public class RocketmqSender {
         }
 
         try {
-            /**
-             * Producer对象在使用之前必须要调用start初始化，初始化一次即可
-             * 注意：切记不可以在每次发送消息时，都调用start方法
-             */
+            // TODO Producer对象在使用之前必须要调用start初始化，初始化一次即可
+            // 注意：切记不可以在每次发送消息时，都调用start方法
             producer.start();
             StopWatch stop = new StopWatch();
             stop.start();
@@ -67,6 +65,7 @@ public class RocketmqSender {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            // TODO 待优化
             producer.shutdown();
         }
     }

@@ -23,7 +23,7 @@ public class BaseTestCase extends AbstractJUnit4SpringContextTests {
 
     static {
         System.setProperty("crtCurrentApplicationName", "demo-mq-rocketmq-testCase");
-        System.setProperty("server.port", "5312");
+        System.setProperty("server.port", "5042");
     }
 
     @Before

@@ -22,8 +22,8 @@ public class BaseTestCase extends AbstractJUnit4SpringContextTests {
     private long endTime;
 
     static {
-        System.setProperty("crtCurrentApplicationName", "demo-mq-kafka-testCase");
-        System.setProperty("server.port", "5012");
+        System.setProperty("crtCurrentApplicationName", "demo-mq-rabbitmq-testCase");
+        System.setProperty("server.port", "5032");
     }
 
     @Before

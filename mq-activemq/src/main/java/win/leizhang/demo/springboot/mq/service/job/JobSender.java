@@ -2,7 +2,6 @@ package win.leizhang.demo.springboot.mq.service.job;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -25,19 +24,12 @@ public class JobSender {
     @Autowired
     private JmsClusterMgr jmsClusterMgr;
 
-    @Value("${win.leizhang.random.value}")
-    private String value;
-    @Value("${win.leizhang.random.number}")
-    private long number;
-    @Value("${win.leizhang.random.bignumber}")
-    private long bigNum;
-
     @Scheduled(cron = "1/5 * * * * ?")
     public void jobSenderVTopic() {
 
         MessageBO bo = new MessageBO();
-        bo.setId(bigNum);
-        bo.setMsg(value);
+        bo.setId(System.currentTimeMillis());
+        bo.setMsg(UUID.randomUUID().toString());
         bo.setSendTime(new Date());
 
         jmsClusterMgr.sendPstTopicMsgOnTransaction(SENDER_DEMO, JSON.toJSONString(bo), msgPropertyMap);
@@ -48,7 +40,7 @@ public class JobSender {
     public void jobSenderQueue() {
 
         MessageBO bo = new MessageBO();
-        bo.setId(number);
+        bo.setId(System.currentTimeMillis());
         bo.setMsg(UUID.randomUUID().toString());
         bo.setSendTime(new Date());
 

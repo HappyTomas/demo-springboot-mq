@@ -43,6 +43,7 @@ public class JobSender {
 
     //@Scheduled(cron = "1/5 * * * * ?")
     public void jobSenderMsgB() throws Exception {
+        // FIXME 待优化，异步方法的关闭资源动作会造成异常
         rocketmqSender.asyncProducer("TopicTest", "tagB", "OrderID188", null);
     }
 
