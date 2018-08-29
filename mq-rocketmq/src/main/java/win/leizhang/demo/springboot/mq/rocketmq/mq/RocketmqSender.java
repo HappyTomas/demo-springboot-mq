@@ -33,7 +33,7 @@ public class RocketmqSender {
 
         String str = JSON.toJSONString(obj);
         // 业务代码
-        log.debug("准备发mq, topic ==> {}, tag== {}, message ==> {}", topic, tag, str);
+        log.debug("准备发mq, topic==>{}, tags==>{}, body==>{}", topic, tag, str);
 
         // 消息体
         Message msg = new Message();
@@ -42,7 +42,7 @@ public class RocketmqSender {
         try {
             msg.setBody(str.getBytes(RemotingHelper.DEFAULT_CHARSET));
         } catch (UnsupportedEncodingException uee) {
-            log.info("不支持的编码转换类型，原文是: {}", str);
+            log.info("不支持的编码转换类型，原消息体是==>{}", str);
             uee.fillInStackTrace();
         }
 
@@ -57,10 +57,10 @@ public class RocketmqSender {
 
             // 发
             SendResult result = producer.send(msg);
-            log.info("结果，发送响应==>{}, 发送状态==>{}", result.getMsgId(), result.getSendStatus());
+            log.info("发送结果:响应==>{}, 状态==>{}", result.getMsgId(), result.getSendStatus());
 
             stop.stop();
-            log.info("发送耗时:{}", stop.getTotalTimeMillis());
+            log.info("发送耗时:{}ms", stop.getTotalTimeMillis());
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -23,7 +23,7 @@ public class JobSender {
     @Autowired
     private RocketmqSender rocketmqSender;
 
-    @Scheduled(cron = "1/5 * * * * ?")
+    @Scheduled(cron = "1/3 * * * * ?")
     public void jobSenderMsg() {
 
         // 消息对象
@@ -32,12 +32,8 @@ public class JobSender {
         bo.setMsg(UUID.randomUUID().toString());
         bo.setSendTime(new Date());
 
-        log.info("jobSenderMsg ==> {}", JSON.toJSONString(bo));
+        log.info("jobSenderMsg==>{}", JSON.toJSONString(bo));
         rocketmqSender.defaultMQProducer("TopicTest", "push", bo);
-
-/*
-        for (int i = 0; i < 10000; i++) {
-        }*/
     }
 
 }
