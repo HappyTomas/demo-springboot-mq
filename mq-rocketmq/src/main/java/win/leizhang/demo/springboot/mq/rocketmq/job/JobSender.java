@@ -36,4 +36,19 @@ public class JobSender {
         rocketmqSender.defaultMQProducer("TopicTest", "push", bo);
     }
 
+    @Scheduled(cron = "1/4 * * * * ?")
+    public void jobSenderMsgA() throws Exception {
+        rocketmqSender.syncProducer("TopicTest", "tagA", null);
+    }
+
+    //@Scheduled(cron = "1/5 * * * * ?")
+    public void jobSenderMsgB() throws Exception {
+        rocketmqSender.asyncProducer("TopicTest", "tagB", "OrderID188", null);
+    }
+
+    @Scheduled(cron = "1/7 * * * * ?")
+    public void jobSenderMsgC() throws Exception {
+        rocketmqSender.onewayProducer("TopicTest", "tagC", null);
+    }
+
 }
